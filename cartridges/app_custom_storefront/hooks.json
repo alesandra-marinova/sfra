@@ -1,0 +1,8 @@
+{
+    "hooks": [
+        {
+            "name": "extend.home",
+            "script": "./cartridge/scripts/hooks/home.js"
+        }
+    ]
+}
