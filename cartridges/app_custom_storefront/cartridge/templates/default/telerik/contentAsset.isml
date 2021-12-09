@@ -1,0 +1,11 @@
+<isdecorate template="common/layout/page">
+    <isif condition="${!empty(pdict.content)}">
+        
+   <isprint value="${pdict.content.custom.body}" encoding="off" />
+        
+    </isif>
+
+  Properties <fieldset>
+    ${Resource.msgf('label.welcome', 'account', null, 'Alesandra')}
+    </fieldset>
+</isdecorate>

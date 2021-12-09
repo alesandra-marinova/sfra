@@ -552,7 +552,8 @@ function handlePayments(order, orderNumber) {
                             'Authorize',
                             orderNumber,
                             paymentInstrument,
-                            paymentProcessor
+                            paymentProcessor,
+                            order.customerEmail
                         );
                     } else {
                         authorizationResult = HookMgr.callHook(

@@ -1,8 +1,12 @@
 <isdecorate template="common/layout/page">
     <isscript>
         var assets = require('*/cartridge/scripts/assets.js');
+        var ContentMgr = require('dw/content/ContentMgr');
+        var StringUtils = require('dw/util/StringUtils');
         assets.addJs('/js/productTile.js');
         assets.addCss('/css/homePage.css');
+        var assetRegistered = ContentMgr.getContent('asset-registered-users');
+        var assetGuests = ContentMgr.getContent('asset-guest-users');
     </isscript>
 
     <!-- +1.888.555.0199 --><!--This phone is a requirement to support existing Gomez monitor of SiteGenesis. Demadware customers can remove this.-->
@@ -18,8 +22,19 @@
 
     <div class="container home-product-tiles homepage">
         <div class="hp-product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
-            <isslot id="home-products-m" description="Product tiles on the home page." context="global" />
+            <isslot id="home-products-m" description="Product tiles on the home page." context="global" />         
         </div>
+        <div class="slot-homework">
+        <isslot id="test-slot-homework" description="Test slot for homework." context="global" />
+        </div>
+
+     <isif condition="${!empty(assetRegistered) && customer.registered}">
+	   <isprint value="${StringUtils.format(assetRegistered.custom.body, customer.profile.firstName)}" encoding="off" />
+       <iselse>
+       <isprint value="${assetGuests.custom.body}" encoding="off" />
+       </iselse>
+     </isif>
+
     </div>
 
     <div class="homepage shop-the-style">
