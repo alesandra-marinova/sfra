@@ -1,0 +1,5 @@
+<div class="container">
+    <h2 class="text-center">${pdict.name}</h2>
+    <h2 class="text-center">${pdict.manufacturer}</h2>
+    <h2 class="text-center">${pdict.starship_class}</h2>
+</div>
