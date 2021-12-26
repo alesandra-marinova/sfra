@@ -1,0 +1,14 @@
+{
+    "step-types": {
+     "script-module-step":
+     [
+     {
+     "@type-id":"custom.DemoJob",
+     "description":"My custom script step type",
+     "module":"app_custom_storefront/cartridge/scripts/steps/CustomJobHomework.js"
+     }
+     ]
+     }
+}
+    
+    

@@ -1,0 +1,58 @@
+<isdecorate template="common/layout/page">
+
+<form action="${URLUtils.url('Subscribe-Create')}" class="create-subscription-form" method="POST"  encoding="off" >
+
+    <div class="form-group
+        <isif condition="${pdict.subscriptionForm.subscribeCustomer.firstname.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="firstName">
+            <isprint value="${pdict.subscriptionForm.subscribeCustomer.firstname.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="firstName" <isprint value="${pdict.subscriptionForm.subscribeCustomer.firstname.attributes}" encoding="off" />>
+            
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition="${pdict.subscriptionForm.subscribeCustomer.lastname.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="lastName">
+            <isprint value="${pdict.subscriptionForm.subscribeCustomer.lastname.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="lastName" <isprint value="${pdict.subscriptionForm.subscribeCustomer.lastname.attributes}" encoding="off" />>
+            
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition="${pdict.subscriptionForm.subscribeCustomer.email.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="email">
+            <isprint value="${pdict.subscriptionForm.subscribeCustomer.email.label}" encoding="htmlcontent" />
+        </label>
+        <input type="email" class="form-control" id="email" <isprint value="${pdict.subscriptionForm.subscribeCustomer.email.attributes}" encoding="off" />>
+            
+        <div class="invalid-feedback"></div>
+    </div>
+
+<div class="form-group">
+
+        <label class="form-control-label" for="gender">
+                    <isprint value="${pdict.subscriptionForm.subscribeCustomer.gender.label}" encoding="htmlcontent" />
+                </label>
+                <select class="form-control" id="gender"
+                    <isprint value="${pdict.subscriptionForm.subscribeCustomer.gender.attributes}" encoding="off" />
+                    autocomplete="gender">
+                    <isloop items=${pdict.subscriptionForm.subscribeCustomer.gender.options} var="gender">
+                        <option id="${gender.id}" value="${gender.htmlValue}" >${gender.label}</option>
+                    </isloop>
+                </select>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+    <div class="row">
+        <div class="col">
+            <button type="submit" name="save" class="btn btn-save btn-block btn-primary">${Resource.msg('button.save','account',null)}</button>
+        </div>
+    </div>
+</form>
+</isdecorate>

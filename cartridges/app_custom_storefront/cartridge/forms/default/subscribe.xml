@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+	<group formid="subscribeCustomer">
+		<field 
+			formid="firstname" 
+			label="label.input.firstname.profile" 
+			mandatory="true" 
+			max-length="50"
+			missing-error="error.message.required" 
+			range-error="error.message.50orless" 
+			type="string" />
+
+		<field 
+			formid="lastname" 
+			label="label.input.lastname.profile" 
+			mandatory="true" 
+			max-length="50" 
+			missing-error="error.message.required"
+			range-error="error.message.50orless" 
+			type="string" />
+
+		<field
+			formid="email" 
+			label="label.input.email.profile" 
+			mandatory="true" 
+			max-length="50" 
+			missing-error="error.message.required"
+			parse-error="error.message.parse.email.profile.form"
+			range-error="error.message.50orless"
+			regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" 
+			value-error="ValueErrorText"
+			type="string"/> 
+
+				
+        <field formid="gender" label="label.input.gender" type="string" binding="gender"  value-error="gender.field.invalid">
+        <options>
+            <option optionid=""     label="gender.select"         value=""/>
+
+            <option optionid="Male"   label="gender.male" value="Male"/>
+            <option optionid="Female"   label="gender.female" value="Female" />           
+
+        </options>
+		</field>
+	</group>	
+</form>
