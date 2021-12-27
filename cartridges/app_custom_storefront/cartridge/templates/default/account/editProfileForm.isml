@@ -64,6 +64,8 @@
         <label class="form-control-label" for="countryOfResidence">
                     <isprint value="${pdict.profileForm.customer.countryOfResidence.label}" encoding="htmlcontent" />
                 </label>
+
+                
                 <select class="form-control" id="countryOfResidence"
                     <isprint value="${pdict.profileForm.customer.countryOfResidence.attributes}" encoding="off" />
                     autocomplete="countryOfResidence">
