@@ -1,0 +1,6 @@
+<button class="notify-when-back btn btn-primary"
+                data-toggle="modal" data-target="#notifyWhenBackProductModal"
+                data-pid="${product.id}" >
+            <i class="fa fa-shopping-bag"></i>
+            ${Resource.msg('msg.product.notifywhenbackinstock.button','product',null)}
+</button>

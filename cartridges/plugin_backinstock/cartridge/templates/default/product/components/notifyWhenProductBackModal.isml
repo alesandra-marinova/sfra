@@ -1,0 +1,26 @@
+<isscript>
+var ContentMgr = require('dw/content/ContentMgr');
+var notifyTitle = ContentMgr.getContent('notifywhenback-asset');            
+</isscript>
+
+<div class="modal" id="notifyWhenBackProductModal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header notify-when-back-header">
+                <isprint value="${notifyTitle.custom.body}" encoding="off" />
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body notify-when-back-body">
+                <input type="hidden" name="product" id="notify-product" value="${product.id}"/>
+                <input type="text" class="form-control" id="notify-phone"/>
+                <div class="invalid-feedback" id="invalidPhoneNumber">${Resource.msg('msg.product.error.invalidphonenumber','product',null)}</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary notify-confirmation-btn"
+                         data-url="${URLUtils.url('Twilio-Subscribe')}">
+                    ${Resource.msg('msg.product.notifywhenbackinstock.button.confirm','product',null)}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
