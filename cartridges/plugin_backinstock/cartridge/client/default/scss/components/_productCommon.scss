@@ -1,0 +1,11 @@
+@import 'base/component/_productCommon.scss';
+
+
+ .subscription-messages {
+    @include toast-message();
+}
+
+
+.add-to-subscription-alert {
+    @include toast-alert();
+}

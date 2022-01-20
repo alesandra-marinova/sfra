@@ -1,0 +1,14 @@
+{
+    "step-types": {
+     "script-module-step":
+     [
+     {
+     "@type-id":"custom.NotifyWhenBack",
+     "description":"My custom script step type",
+     "module":"plugin_backinstock/cartridge/scripts/steps/NotifyWhenBack.js"
+     }
+     ]
+     }
+}
+    
+    
